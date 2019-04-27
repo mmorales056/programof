@@ -15,14 +15,6 @@ class TeachersControllers < ApplicationController
    erb :show
   end
 
-  get  "/:id/:id2" do
-      id= params[:id].to_i
-      id2= params[:id2].to_i
-   @teacher1 = Teacher.all[id][id2]
-   #@teacher2 = Teacher.all[id2]
-   erb :show2
-
-  end
 
 
 end
