@@ -1,0 +1,3 @@
+william,william@misena.edu.co,desarrollo
+carmelo,carmelo@misena.edu.co,bases de datos
+ruben,ruben@misena.edu.co, ruby
