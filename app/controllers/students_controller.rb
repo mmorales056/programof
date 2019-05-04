@@ -5,18 +5,37 @@ class StudentsController < ApplicationController
 
   set :views, File.join( APP_ROOT, 'app', 'views', 'students')
 
-  #get / usuarios
+  #get / student
   get "/" do
     @students  = Student.all #llamamos al metodo all de la clase Student
     erb :index
   end
- # get /usuarios/id
+#get / student/new
+  get '/new' do
+    erb:new
+  end
 
+ # get /usuarios/id
   get "/:id" do
     id = params[:id].to_i
     @student =Student.all[id]
     erb :show
   end
+
+#Recibe los datos del formulario
+  post '/' do
+    student = Student.new(studentParams)
+    student.save#Metodo que guarda los registros
+    puts params
+    redirect '/students'
+  end
+
+#me devuelve los parametros que vienen desde new.html.erb
+  def studentParams
+    params[:student]
+  end
+
+
 
 
 end

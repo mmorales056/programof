@@ -1,5 +1,6 @@
 # este archivo Se encarga de mapear todos los modelos los controladores y las vistas del proyecto
 require "sinatra"
+require "csv"
 
 
 APP_ROOT = File.dirname(__FILE__)
