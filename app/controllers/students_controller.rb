@@ -27,7 +27,7 @@ class StudentsController < ApplicationController
     student = Student.new(studentParams)
     student.save#Metodo que guarda los registros
     puts params
-    redirect '/students'
+    redirect '/teachers'
   end
 
 #me devuelve los parametros que vienen desde new.html.erb

@@ -1,4 +1,4 @@
-class Student < Storage::Base
+class Student < ActiveRecord::Base
 
   def self.tableName
     'students'

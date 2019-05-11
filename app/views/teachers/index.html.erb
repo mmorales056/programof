@@ -2,16 +2,17 @@
 <% @teachers%>
 <table border="1px">
   <tr>
-      <th> Nombre</th>
-      <th> Email</th>
-      <th> Materia</th>
+      <th> nombre</th>
+      <th> correo</th>
+      <th> Programa</th>
   </tr>
 
     <%@teachers.each do |teacher|%>
   <tr>
     <td><%= teacher.nombre%></td>
-    <td><%= teacher.email%></td>
-    <td><%= teacher.materia %></td>
+    <td><%= teacher.correo%></td>
+    <td><%= teacher.programa %></td>
   </tr>
   <%end%>
 </table>
+<a href="/teachers/new"> New Teacher</a>

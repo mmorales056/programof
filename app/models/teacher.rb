@@ -1,12 +1,5 @@
-class Teacher < Storage::Base
-  attr_accessor :nombre, :email, :materia
-
-  def initialize(nombre,email,materia)
-    self.nombre= nombre
-    self.email= email
-    self.materia= materia
-  end
-
+class Teacher < ActiveRecord::Base
+  #MEtodo que da nombre al archivo
   def self.tableName
     'teachers'
   end
