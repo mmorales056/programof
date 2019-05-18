@@ -17,17 +17,21 @@ class StudentsController < ApplicationController
 
  # get /usuarios/id
   get "/:id" do
-    id = params[:id].to_i
-    @student =Student.all[id]
+    id = params[:id]
+    @student =Student.find(id)
     erb :show
   end
 
 #Recibe los datos del formulario
   post '/' do
-    student = Student.new(studentParams)
-    student.save#Metodo que guarda los registros
-    puts params
-    redirect '/teachers'
+    #llamamos el metodo create
+    student = Student.create(studentParams)
+    redirect '/students'
+  end
+
+  delete '/:id' do
+    Student.destroy(params[:id])
+    redirect '/students'
   end
 
 #me devuelve los parametros que vienen desde new.html.erb
