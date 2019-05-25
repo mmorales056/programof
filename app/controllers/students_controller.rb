@@ -38,8 +38,4 @@ class StudentsController < ApplicationController
   def studentParams
     params[:student]
   end
-
-
-
-
 end

@@ -55,8 +55,6 @@ module ActiveRecord
        
     end
 
-   
-
     def self.tableName
       raise("NotImplementedError")
     end
