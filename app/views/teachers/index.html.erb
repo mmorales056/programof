@@ -1,18 +1,34 @@
 <h1>Teachers</h1>
 <% @teachers%>
-<table border="1px">
-  <tr>
-      <th> nombre</th>
-      <th> correo</th>
-      <th> Programa</th>
-  </tr>
+    <table border="1px">
+        <tr>
+            <th> nombre</th>
+            <th> correo</th>
+            <th> Programa</th>
+        </tr>
 
-    <%@teachers.each do |teacher|%>
-  <tr>
-    <td><%= teacher.nombre%></td>
-    <td><%= teacher.correo%></td>
-    <td><%= teacher.programa %></td>
-  </tr>
-  <%end%>
-</table>
-<a href="/teachers/new"> New Teacher</a>
+        <%@teachers.each do |teacher|%>
+            <tr>
+                <td>
+                    <%= teacher.nombre%>
+                </td>
+                <td>
+                    <%= teacher.correo%>
+                </td>
+                <td>
+                    <%= teacher.programa %>
+                </td>
+
+                <td>
+                    <a href="/teachers/<%= teacher.id %>">Ver </a>
+
+                    <form action="/teachers/<%= teacher.id %>" method="post">
+                        <input name="_method" type="hidden" value="delete">
+                        <input type="submit" value="Eliminar">
+                    </form>
+                    <a href="/teachers/<%= teacher.id %>/edit">editar </a>
+                </td>
+            </tr>
+            <%end%>
+    </table>
+    <a href="/teachers/new"> New Teacher</a>
