@@ -1,0 +1,8 @@
+{
+    "adapter": "postgresql",
+    "host": "localhost",
+    "username": "mateo",
+    "password": "Colombia2019",
+    "database": "web_app"
+
+}

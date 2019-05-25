@@ -13,10 +13,16 @@ class TeachersControllers < ApplicationController
     erb :new
   end
 
+  get '/:id/edit' do
+       id= params[:id].to_i
+    @teacher = Teacher.find(id)
+    erb :edit
+  end
+
 
   get  "/:id" do
       id= params[:id].to_i
-   @teacher = Teacher.all[id]
+   @teacher = Teacher.find(id)
    erb :show
   end
 
@@ -29,8 +35,21 @@ post '/' do
   redirect '/teachers'
 end
 
+delete '/:id' do
+  Teacher.destroy(params[:id])
+  redirect '/teachers'
+end
+
+put '/:id' do 
+  Teacher.update(params[:id], teacherEditParams)
+  redirect 'teachers'
+end
+
 def teacherParams
   params[:teacher]
 end
 
+def teacherEditParams
+  params[:teacherEdit]
+end
 end

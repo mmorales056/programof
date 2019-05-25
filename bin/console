@@ -2,5 +2,10 @@
 
 require 'irb'
 require_relative "../boot.rb"
-    
+def reload!
+    puts "reloading....."
+
+    path= File.join(APP_ROOT, "/boot.rb")
+    load path
+end
 IRB.start
