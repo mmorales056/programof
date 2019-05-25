@@ -14,6 +14,11 @@ class StudentsController < ApplicationController
   get '/new' do
     erb:new
   end
+  get '/:id/edit' do
+    id = params[:id]
+    @student =Student.find(id)
+    erb :edit
+  end
 
  # get /usuarios/id
   get "/:id" do
@@ -33,6 +38,16 @@ class StudentsController < ApplicationController
     Student.destroy(params[:id])
     redirect '/students'
   end
+
+  put '/:id' do 
+    Student.update(params[:id], studentEditParams)
+    redirect 'students'
+  end  
+
+  def studentEditParams
+    params[:studentEdit]
+  end
+
 
 #me devuelve los parametros que vienen desde new.html.erb
   def studentParams

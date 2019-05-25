@@ -1,0 +1,17 @@
+<h2> Estudiante:  </h2>
+<form  action="/students/<%= @student.id %>" method="POST">
+    <input name="_method" type="hidden" value="put">
+    <label for="studentEdit[nombre]">Nombre</label>
+    <input type="text" name="studentEdit[nombre]">
+    <br>
+    <label for="studentEdit[correo]">Email</label>
+    <input type="text" name="studentEdit[correo]">
+    <br>
+    <label for="studentEdit[fecha]">Fecha</label>
+    <input type="date" name="studentEdit[fecha]">
+    <br>
+    <label for="sudentEdit[programa]"> Programa</label>
+    <input type="text" name="studentEdit[programa]" value="">
+    <br>
+    <input type="submit"  value="Guardar">
+</form>

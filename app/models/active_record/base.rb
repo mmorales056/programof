@@ -55,6 +55,16 @@ module ActiveRecord
        
     end
 
+
+    def self.update(id, params)
+      
+      columns = params.keys.join(', ')
+      values = params.values.map {|v| "'#{v}'"}.join(', ')
+        results = execute_query("UPDATE #{tableName}  SET (#{columns}) = (#{values}) where id= #{id};")
+      
+      
+    end
+
     def self.tableName
       raise("NotImplementedError")
     end
